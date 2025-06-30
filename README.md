@@ -2,6 +2,12 @@
 
 A Model Context Protocol (MCP) server that provides comprehensive code review and analysis for React and Next.js applications. This tool leverages ESLint with framework-specific rules to identify issues, suggest best practices, and ensure code quality.
 
+## 🚀 Live Demo
+
+[![Deploy with Vercel](./vercel_link.png)](https://react-code-review-mcp-main.vercel.app/)
+
+**Try it live:** [https://react-code-review-mcp-main.vercel.app/](https://react-code-review-mcp-main.vercel.app/)
+
 ## Features
 
 🔍 **Smart Framework Detection**
