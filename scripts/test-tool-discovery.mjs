@@ -7,7 +7,7 @@ async function testToolDiscovery() {
   console.log("Testing MCP Tool Discovery...\n");
 
   const serverUrl =
-    process.argv[2] || "https://react-code-review-mcp.vercel.app/mcp";
+    process.argv[2] || "https://react-code-review-mcp-main.vercel.app/mcp";
 
   console.log(`Testing server: ${serverUrl}\n`);
 

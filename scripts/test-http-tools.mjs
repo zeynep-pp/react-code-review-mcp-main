@@ -2,7 +2,7 @@
 
 async function testHttpTools() {
   const baseUrl =
-    process.argv[2] || "https://react-code-review-mcp.vercel.app";
+    process.argv[2] || "https://react-code-review-mcp-main.vercel.app";
 
   console.log(`Testing MCP HTTP endpoints on: ${baseUrl}\n`);
 

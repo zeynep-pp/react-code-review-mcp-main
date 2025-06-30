@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const serverUrl = "https://react-code-review-mcp.vercel.app";
+const serverUrl = "https://react-code-review-mcp-main.vercel.app";
 
 console.log("Cursor MCP Configuration Options:\n");
 
