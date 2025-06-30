@@ -65,6 +65,69 @@ The server will start on `http://localhost:3000`
 
 ## Usage
 
+### Cursor IDE Integration
+
+This MCP server can be easily integrated with Cursor IDE to provide real-time React/Next.js code review capabilities directly in your editor.
+
+#### Quick Setup for Cursor
+
+1. **Generate Configuration**
+   ```bash
+   node scripts/generate-cursor-config.mjs
+   ```
+
+2. **Add to Cursor Settings**
+   Copy one of the generated configurations to your Cursor settings:
+   - **File → Preferences → Settings**
+   - Search for "MCP" or go to the Claude section
+   - Add the configuration JSON
+
+#### Configuration Options
+
+**Option 1: Direct SSE Connection (Recommended for Cursor 0.48.0+)**
+```json
+{
+  "mcpServers": {
+    "react-code-review": {
+      "url": "https://react-code-review-mcp-main.vercel.app/sse"
+    }
+  }
+}
+```
+
+**Option 2: Using server-everything proxy**
+```json
+{
+  "mcpServers": {
+    "react-code-review": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-everything", "https://react-code-review-mcp-main.vercel.app/mcp"],
+      "env": {}
+    }
+  }
+}
+```
+
+**Option 3: Using mcp-client-cli**
+```json
+{
+  "mcpServers": {
+    "react-code-review": {
+      "command": "npx",
+      "args": ["-y", "mcp-client-cli", "https://react-code-review-mcp-main.vercel.app/sse"]
+    }
+  }
+}
+```
+
+#### Using in Cursor
+
+Once configured, you can:
+- **Ask Claude to review your React/Next.js code** - Simply select code and ask "Can you review this React component?"
+- **Get real-time feedback** - Paste code snippets and get instant analysis
+- **Framework-specific suggestions** - Automatic detection of React vs Next.js patterns
+- **Best practices enforcement** - ESLint rules tailored for React/Next.js
+
 ### MCP Tool Integration
 
 The MCP server exposes a single tool called `react-nextjs-code-review` that can be used by MCP clients like Claude Desktop.
