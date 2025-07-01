@@ -436,3 +436,45 @@ For issues, questions, or contributions, please:
 ---
 
 **Built with ❤️ for the React and Next.js community**
+
+## 🚀 Deploy with Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ftrancethehuman%2Freact-nextjs-code-review-mcp&env=REDIS_URL)
+
+Click the button above for a one-click deploy to Vercel. This will automatically clone the repository and prompt you to set the required `REDIS_URL` environment variable.
+
+---
+
+## 🔑 Redis Configuration (Local & Vercel)
+
+This MCP server supports Redis caching for improved performance. You can use either a local Redis instance (for development) or Upstash Redis (for production/Vercel deployments).
+
+### Local Development
+
+1. **Start a local Redis instance** (if you don't have one running):
+   ```sh
+   docker run -d --name redis-mcp -p 6379:6379 redis:latest
+   ```
+2. **Create a `.env.local` file** in your project root with:
+   ```env
+   REDIS_URL=redis://localhost:6379
+   ```
+
+### Vercel/Upstash (Production)
+
+1. **Provision an Upstash Redis database** (https://upstash.com/).
+2. **Copy your Upstash Redis connection string** (it will look like `rediss://default:YOUR_UPSTASH_PASSWORD@your-upstash-endpoint.upstash.io:6379`).
+3. **Go to your project on [Vercel Dashboard](https://vercel.com/dashboard).**
+4. **Select your project.**
+5. **Navigate to the "Settings" tab, then "Environment Variables".**
+6. **Add a new variable:**
+   - **Key:** `REDIS_URL`
+   - **Value:** your Upstash Redis connection string
+   - **Environments:** Select Production, Preview, and Development as needed
+7. **Click "Save" and redeploy your project.**
+
+> **Note:**
+> - Do not commit your `.env` files to git. Vercel will securely inject these environment variables at build and runtime.
+> - The server will automatically detect and use the correct Redis configuration based on your environment.
+
+---
