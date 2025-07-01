@@ -144,7 +144,7 @@ export default function HomePage() {
 
           <div className="buttons">
             <a
-              href="https://cursor.com/install-mcp?name=react-code-review&config=eyJ1cmwiOiJodHRwczovL2FnZW50LWVuZ2luZWVyaW5nLWJvb3RjYW1wLW1jcC52ZXJjZWwuYXBwL3NzZSJ9"
+              href="https://cursor.com/install-mcp?name=react-code-review&config=eyJ1cmwiOiJodHRwczovL3JlYWN0LWNvZGUtcmV2aWV3LW1jcC1tYWluLnZlcmNlbC5hcHAvc3NlIn0="
               className="cursor-btn"
             >
               <img
