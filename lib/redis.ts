@@ -21,6 +21,7 @@ export function getRedisClient() {
   // Fall back to local Redis (development environment)
   if (process.env.REDIS_URL) {
     console.log("Using local Redis");
+    console.log("REDIS_URL:", process.env.REDIS_URL);
     redisClient = createClient({
       url: process.env.REDIS_URL,
     });

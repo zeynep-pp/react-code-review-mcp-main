@@ -56,7 +56,7 @@ A
    Create a `.env.local` file for Redis caching:
    ```env
    # For local Redis
-   REDIS_URL=redis://localhost:6379
+   REDIS_URL=rediss://localhost:6379
    
    # For Upstash Redis (production)
    UPSTASH_REDIS_REST_URL=your_upstash_url
