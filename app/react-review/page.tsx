@@ -1,5 +1,19 @@
+'use client';
+
 import React, { useState } from 'react';
-import { analyzeReactCode, ReactCodeReviewResult } from '../../tools/react-code-review';
+
+interface LintMessage {
+  line: number;
+  column: number;
+  severity: 'error' | 'warning' | 'info';
+  message: string;
+  ruleId?: string;
+}
+
+interface ReactCodeReviewResult {
+  messages: LintMessage[];
+  summary: string;
+}
 
 export default function ReactReviewPage() {
   const [code, setCode] = useState('');
@@ -8,8 +22,28 @@ export default function ReactReviewPage() {
 
   const handleAnalyze = async () => {
     setLoading(true);
-    const analysis = await analyzeReactCode(code);
-    setResult(analysis);
+    try {
+      const response = await fetch('/api/analyze', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ code }),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Analysis failed');
+      }
+      
+      const analysis = await response.json();
+      setResult(analysis);
+    } catch (error) {
+      console.error('Analysis error:', error);
+      setResult({
+        messages: [],
+        summary: 'Error: Failed to analyze code'
+      });
+    }
     setLoading(false);
   };
 
