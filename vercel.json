@@ -1,0 +1,32 @@
+{
+  "functions": {
+    "app/api/sse/route.ts": {
+      "runtime": "edge"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/sse",
+      "destination": "/api/sse"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/sse",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        },
+        {
+          "key": "Connection",
+          "value": "keep-alive"
+        },
+        {
+          "key": "Content-Type",
+          "value": "text/event-stream"
+        }
+      ]
+    }
+  ]
+}
