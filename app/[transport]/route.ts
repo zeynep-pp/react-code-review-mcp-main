@@ -2,7 +2,7 @@ import { createMcpHandler } from "@vercel/mcp-adapter";
 import { getRedisUrl, isRedisAvailable } from "../../lib/redis";
 import { reactCodeReviewTool } from "../../tools";
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 const handler = createMcpHandler(
   async (server) => {
