@@ -1,6 +1,7 @@
 # React & Next.js Code Review MCP
 
 A Model Context Protocol (MCP) server that provides comprehensive code review and analysis for React and Next.js applications. This tool leverages ESLint with framework-specific rules to identify issues, suggest best practices, and ensure code quality.
+A
 
 ## 🚀 Live Demo
 
