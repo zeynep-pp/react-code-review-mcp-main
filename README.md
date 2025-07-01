@@ -72,6 +72,28 @@ The server will start on `http://localhost:3000`
 
 ## Usage
 
+### Example Questions
+
+You can ask the agent questions like:
+
+- "Can you review this React component for code quality and best practices?"
+- "Are there any issues in my Next.js page? Can you analyze the code?"
+- "Does this code have any performance or security problems?"
+
+#### Example Prompt
+
+```
+Can you review the following React component? Please list any errors and suggestions for improvement.
+
+import React from 'react';
+
+function MyButton() {
+  return <button onClick={() => alert("Clicked!")}>Click me</button>;
+}
+
+export default MyButton;
+```
+
 ### Cursor IDE Integration
 
 This MCP server can be easily integrated with Cursor IDE to provide real-time React/Next.js code review capabilities directly in your editor.
@@ -439,7 +461,7 @@ For issues, questions, or contributions, please:
 
 ## 🚀 Deploy with Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ftrancethehuman%2Freact-nextjs-code-review-mcp&env=REDIS_URL)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fzeynep-pp%2Freact-code-review-mcp-main&env=REDIS_URL)
 
 Click the button above for a one-click deploy to Vercel. This will automatically clone the repository and prompt you to set the required `REDIS_URL` environment variable.
 
